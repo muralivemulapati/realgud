@@ -121,7 +121,7 @@ problem as best as we can determine."
 		    (mapcar (lambda (buf) (buffer-file-name buf))
 			    (realgud-cmdbuf-info-srcbuf-list realgud-cmdbuf-info))))
 	    (setq matching-file-list (realgud--file-matching-suffix buffer-files filename))
-	    (car matching-file-list)))
+	    (setq filename (car matching-file-list))))
 
 	  ;; Do we want to blacklist this?
 	  ((y-or-n-p (format "Unable to locate %s\nBlacklist it for location tracking?" filename))
